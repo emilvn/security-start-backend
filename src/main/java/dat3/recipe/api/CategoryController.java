@@ -1,5 +1,6 @@
 package dat3.recipe.api;
 
+import dat3.recipe.dto.CategoryDto;
 import dat3.recipe.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,8 @@ public class CategoryController {
     }
 
     @PostMapping
-    public String addCategory(@RequestBody String name) {
-        return categoryService.addCategory(name);
+    public CategoryDto addCategory(@RequestBody CategoryDto request) {
+        return categoryService.addCategory(request);
     }
 }
 
